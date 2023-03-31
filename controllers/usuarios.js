@@ -61,9 +61,6 @@ const usuariosPath = (req = request, res = response) => {
 const usuariosDelete = async(req = request, res = response) => {
     const id = req.params.id;
 
-    //Se borra el usuario de manera fisica
-    //const usuario = await Usuario.findByIdAndDelete(id);
-
     //Para borrarlo de manera logica se modifica el estado
     const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
 
